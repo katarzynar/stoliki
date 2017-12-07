@@ -10,6 +10,7 @@ import { HttpClient } from "@angular/common/http";
   <button class="btn" [routerLink]="['/filtry']">SZCZEGÓŁOWE</button>
 
   <div class="res-box" *ngFor="let restaurant of restaurants"
+  [routerLink]="['/restaurant',restaurant.id]"
   [ngStyle]="{'background-image': 'url(' + restaurant.img + ')'}">
     {{restaurant.name}}
   </div>

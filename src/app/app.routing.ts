@@ -14,7 +14,7 @@ const routes:Routes = [
     { path:'', component: HomeComponent },
     { path:'list', component: RestaurantsListComponent }, 
     { path:'filtry', component: FiltersComponent },
-    { path:'restaurant', component: RestaurantComponent },
+    { path:'restaurant/:id', component: RestaurantComponent },
     { path:'search', component: SearchComponent },
     { path:'profile', component: ProfileComponent },
     { path:'favourite', component: FavouriteComponent },
