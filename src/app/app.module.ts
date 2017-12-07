@@ -17,6 +17,7 @@ import { ProfileComponent } from './profile.component';
 import { FavouriteComponent } from './favourite.component';
 import { ReservationsComponent } from './reservations.component';
 import { HistoryComponent } from './history.component';
+import { ReservationComponent } from './reservation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HistoryComponent } from './history.component';
     ProfileComponent,
     FavouriteComponent,
     ReservationsComponent,
-    HistoryComponent
+    HistoryComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserAnimationsModule,
