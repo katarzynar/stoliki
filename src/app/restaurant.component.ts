@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
@@ -17,16 +17,45 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
       {{restaurant.name}}
     </div>
 
+    <div>
+    Available:  
+      <span *ngFor="let spot of available">
+        <button (click)="startReservation(spot)">{{spot.hours}}</button>
+      </span>
+    </div>
+
     </div>
 
   `,
-  styles: [],
+  styles: [`
+  .res-box{
+      height: 200px;
+    }
+  `],
   encapsulation: ViewEncapsulation.None
 })
 export class RestaurantComponent implements OnInit {
 
   constructor(private http: HttpClient,
+            private router: Router,
             private route:ActivatedRoute) { }
+
+  available = [
+    { hours: '1700', reservation: null},
+    { hours: '1730', reservation: null},
+    { hours: '1800', reservation: null},
+    { hours: '1830', reservation: null},
+    { hours: '1900', reservation: null},
+  ]
+
+  startReservation(spot){
+    this.router.navigate(['/reservation'],{
+      queryParams:{
+        hours: spot.hours,
+        reservationId: spot.reservation && spot.reservation.id
+      }
+    })
+  }
 
   restaurant
 

@@ -16,8 +16,6 @@ import { HttpClient } from "@angular/common/http";
     `.res-box{
       height: 200px;
     }
-    }
-
     `
   ],
   encapsulation: ViewEncapsulation.None
